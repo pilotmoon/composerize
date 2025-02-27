@@ -1,8 +1,0 @@
-{
-    "name": "Composerize",
-    "icon": "symbol:wand.and.stars",
-    "requirements": [
-        "text"
-    ],
-    "applescript": "try\n  set savedClipboard to the clipboard\n  set the clipboard to \"{popclip text}\"\n  tell application \"Cursor\"\n    activate\n    delay 0.5\n  end tell\n  tell application \"System Events\"\n    tell process \"Cursor\"\n      keystroke \"i\" using command down\n      delay 0.5\n      keystroke \"v\" using command down\n      delay 0.3\n    end tell\n  end tell\n  delay 0.3\n  set the clipboard to savedClipboard\non error errMsg\n  set the clipboard to savedClipboard\n  display dialog \"Error: \" & errMsg buttons {\"OK\"} default button \"OK\"\nend try"
-}
